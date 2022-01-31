@@ -17,9 +17,9 @@ for user in $(cat $apach_path/$mcmmo_ufile | grep -v '#' | awk -F ':' '{ print $
 do
 	if [ $cnt = 0 ]
 	then
-		cat $mc_path/logs/$user_ufile | grep "lost connection" | grep "$user" | tail -n 1 | awk -F ' ' '{ print $1 " "  $4}' > $apach_path/$log_file
+		cat $mc_path/logs/$user_file | grep "lost connection" | grep "$user" | tail -n 1 | awk -F ' ' '{ print $1 " "  $4}' > $apach_path/$log_file
 	else
-		cat $mc_path/logs/$user_ufile | grep "lost connection" | grep "$user" | tail -n 1 | awk -F ' ' '{ print $1 " "  $4}'>> $apach_path/$log_file
+		cat $mc_path/logs/$user_file | grep "lost connection" | grep "$user" | tail -n 1 | awk -F ' ' '{ print $1 " "  $4}'>> $apach_path/$log_file
 	fi
 	cnt=$((cnt+1))
 done
