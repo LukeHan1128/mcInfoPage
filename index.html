@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>User Profile</title>
+
+    <style type="text/css" media="screen">
+    .row{padding: 0 20px; width:100%;}
+    .row > .col-xl-3 {margin-bottom:30px;}
+    .page-header-icon{padding: 15px 0px 20px 0px; text-align: center;}
+    .card{box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);}
+    .card-header{margin-bottom: 5px;}
+    .card-body.text-center{padding-top: 0; padding-bottom: 0;}
+    .card-body h1{margin-bottom: 5px !important;}
+    </style>
+
+    <script>
+    function create_card(user_info){
+      var lv = (user_info[1]*1) + (user_info[3]*1) + (user_info[5]*1) + (user_info[6]*1)
+              + (user_info[7]*1) + (user_info[8]*1) + (user_info[9]*1) + (user_info[10]*1)
+              + (user_info[11]*1) + (user_info[12]*1) + (user_info[21]*1) + (user_info[30]*1);
+      var card_txt = '';
+
+      card_txt += '<div class="col-xl-3">';
+      card_txt += '<div class="card">';
+      card_txt += '<div class="card-header alert alert-info">';
+      card_txt += '<b>' + user_info[0] + '</b>';
+      card_txt += '<span style="position: absolute;right: 15px;"></span>';
+      card_txt += '</div>';
+      card_txt += '<div class="card-body text-center">';
+      card_txt += '<img src="assets/img/illustrations/profiles/profile-1.png" alt="" class="img-account-profile rounded-circle mb-2">';
+      card_txt += '<div class="small font-italic text-muted mb-4">';
+
+      card_txt += '<h1 style="margin-bottom: 10px;">Lv.' + lv + '</h1>';
+      card_txt += '<h5 class="party" data-name="' + user_info[0] + '" style="margin-bottom: 20px;"><b>Party : </b></h5>';
+
+      card_txt += '<div class="card" style="box-shadow: none;">';
+      card_txt += '<div class="card-header alert alert-success"><b>Skill</b></div>';
+      card_txt += '<p><b>MINING Level : </b>' + user_info[1] + '</p>';
+      card_txt += '<p><b>MINING Exe : </b>' + user_info[2] + '</p>';
+      card_txt += '<hr style="margin-top: 0;"/>';
+      card_txt += '<p><b>WOODCUTTING Level : </b>' + user_info[3] + '</p>';
+      card_txt += '<p><b>WOODCUTTING Exe : </b>' + user_info[4] + '</p>';
+      card_txt += '<hr style="margin-top: 0;"/>';
+      card_txt += '<p><b>REPAIR Level : </b>' + user_info[5] + '</p>';
+      card_txt += '<p><b>REPAIR Exe : </b>' + user_info[13] + '</p>';
+      card_txt += '<hr style="margin-top: 0;"/>';
+      card_txt += '<p><b>UNARMED Level : </b>' + user_info[6] + '</p>';
+      card_txt += '<p><b>UNARMED Exe : </b>' + user_info[14] + '</p>';
+      card_txt += '<hr style="margin-top: 0;"/>';
+      card_txt += '<p><b>HERBALISM Level : </b>' + user_info[7] + '</p>';
+      card_txt += '<p><b>HERBALISM Exe : </b>' + user_info[15] + '</p>';
+      card_txt += '<hr style="margin-top: 0;"/>';
+      card_txt += '<p><b>EXCAVATION Level : </b>' + user_info[8] + '</p>';
+      card_txt += '<p><b>EXCAVATION Exe : </b>' + user_info[16] + '</p>';
+      card_txt += '<hr style="margin-top: 0;"/>';
+      card_txt += '<p><b>ARCHERY Level : </b>' + user_info[9] + '</p>';
+      card_txt += '<p><b>ARCHERY Exe : </b>' + user_info[17] + '</p>';
+      card_txt += '<hr style="margin-top: 0;"/>';
+      card_txt += '<p><b>SWORDS Level : </b>' + user_info[10] + '</p>';
+      card_txt += '<p><b>SWORDS Exe : </b>' + user_info[18] + '</p>';
+      card_txt += '<hr style="margin-top: 0;"/>';
+      card_txt += '<p><b>AXES Level : </b>' + user_info[11] + '</p>';
+      card_txt += '<p><b>AXES Exe : </b>' + user_info[19] + '</p>';
+      card_txt += '<hr style="margin-top: 0;"/>';
+      card_txt += '<p><b>ACROBATICS Level : </b>' + user_info[12] + '</p>';
+      card_txt += '<p><b>ACROBATICS Exe : </b>' + user_info[20] + '</p>';
+      card_txt += '<hr style="margin-top: 0;"/>';
+      card_txt += '<p><b>TAMING Level : </b>' + user_info[21] + '</p>';
+      card_txt += '<p><b>TAMING Exe : </b>' + user_info[22] + '</p>';
+      card_txt += '<hr style="margin-top: 0;"/>';
+      card_txt += '<p><b>FISHING Level : </b>' + user_info[30] + '</p>';
+      card_txt += '<p><b>FISHING Exe : </b>' + user_info[31] + '</p>';
+      card_txt += '</div>';
+      card_txt += '<p></p>';
+
+      card_txt += '<div class="card" style="box-shadow: none;">';
+      card_txt += '<div class="card-header alert alert-warning"><b>Ability</b></div>';
+      card_txt += '<p><b>BERSERK : </b>' + user_info[23] + '</p>';
+      card_txt += '<p><b>GIGA_DRILL_BREAKER : </b>' + user_info[24] + '</p>';
+      card_txt += '<p><b>TREE_FELLER : </b>' + user_info[25] + '</p>';
+      card_txt += '<p><b>GREEN_TERRA : </b>' + user_info[26] + '</p>';
+      card_txt += '<p><b>SERRATED_STRIKES : </b>' + user_info[27] + '</p>';
+      card_txt += '<p><b>SKULL_SPLITTER : </b>' + user_info[28] + '</p>';
+      card_txt += '<p><b>SUPER_BREAKER : </b>' + user_info[29] + '</p>';
+      card_txt += '<p><b>BLAST_MINING : </b>' + user_info[33] + '</p>';
+      card_txt += '</div>';
+      card_txt += '<p></p>';
+      card_txt += '<div class="card" style="box-shadow: none;">';
+      card_txt += '<p><b>HudType : </b>' + user_info[30] + '</p>';
+      card_txt += '<p><b>System.currentTimeMillis() / Misc.TIME_CONVERSION_FACTOR : </b>' + user_info[34] + '</p>';
+      //card_txt += '<p><b>MobHealthbarType : </b>' + user_info[35] + '</p>';
+      card_txt += '</div>';
+      card_txt += '</div>';
+      card_txt += '</div>';
+      card_txt += '</div>';
+      card_txt += '</div>';
+
+      var udiv = document.querySelector('#user_div');
+      udiv.innerHTML += card_txt;
+    }
+
+    function create_pcard(p_info){
+      var info = p_info.split(':');
+
+      var card_txt = '';
+      card_txt += '<div class="col-xl-3">';
+      card_txt += '<div class="card">';
+      card_txt += '<div class="card-header alert alert-primary">';
+      card_txt += '<b>' + info[0] + '</b>';
+      card_txt += '<span style="position: absolute;right: 15px;"></span>';
+      card_txt += '</div>';
+      card_txt += '<div class="card-body text-center">';
+      card_txt += '<img src="assets/img/illustrations/profiles/profile-1.png" alt="" class="img-account-profile rounded-circle mb-2">';
+      card_txt += '<div class="small font-italic text-muted mb-4">';
+
+      card_txt += '<h1 style="margin-bottom: 10px;">Lv.' + info[2] + '</h1>';
+      card_txt += '<h5 class="party" style="margin-bottom: 20px;">Xp : ' + info[3] + '</h5>';
+
+      card_txt += '<div class="card" style="box-shadow: none;">';
+      card_txt += '<div class="card-header alert alert-danger"><b>Leader</b></div>';
+      card_txt += '<p>' + info[1] + '</p>';
+      card_txt += '</div>';
+      card_txt += '<p></p>';
+
+      card_txt += '<div class="card" style="box-shadow: none; padding-bottom: 15px;">';
+      card_txt += '<div class="card-header alert alert-secondary"><b>Member</b></div>';
+      for(var i=4; i<info.length ;++i){
+        card_txt += '<p style="margin: 0;">' + info[i] + '</p>';
+      }
+      card_txt += '</div>';
+
+      card_txt += '</div>';
+      card_txt += '</div>';
+      card_txt += '</div>';
+      card_txt += '</div>';
+
+      var pdiv = document.querySelector('#party_div');
+      pdiv.innerHTML += card_txt;
+    }
+
+    function load_ucard_list(){
+      var users_info = '';
+      var xhr = new XMLHttpRequest();
+
+      xhr.onload = function(){
+        if(xhr.status === 200){
+          var respon = xhr.responseText.split('\n');
+          for(var i=0; i<respon.length ;++i){
+            if('#' == respon[i][0] || 4 > respon[i].length) continue;
+            
+            var user_info = respon[i].replaceAll(':IGNORED','').split(':');
+            create_card(user_info);
+          }
+        }
+      };
+      xhr.open("GET", "mcmmo.users", true);
+      xhr.send("search=alice");
+    }
+
+    function load_pcard_list(){
+      var partys_info = '';
+      var xhr = new XMLHttpRequest();
+
+      xhr.onload = function(){
+        if(xhr.status === 200){
+          /* for user info */
+          var respon = xhr.responseText.split('\n');
+          var pname = '';
+          var leaderName = '';
+          var plist = [];
+          var temp_for_plist = '';
+
+          for(var i=0; i<respon.length ;++i){
+            if(' ' != respon[i][0] && 2 < respon[i].length){
+              if(0 != i) plist.push(temp_for_plist);
+
+              pname = respon[i].replaceAll(':', '');
+              temp_for_plist = pname;
+              continue;
+            }
+
+            var line = respon[i].replaceAll(' ', '');
+
+            if(0 == line.indexOf('Leader:')){
+              leaderName = line.split('|')[1];
+              temp_for_plist += ':' + leaderName;
+            }
+            else if(0 == line.indexOf('Level:')){
+              temp_for_plist += ':' + line.split(':')[1];
+            }
+            else if(0 == line.indexOf('Xp:')){
+              temp_for_plist += ':' + line.split(':')[1];
+            }
+            else if('-' == line[0]){
+              var name = line.split('|')[1];
+              var txt = pname;
+
+              if(name == leaderName) txt += ' (Leader)';
+              else temp_for_plist += ':' + name;
+
+              var elem = document.querySelectorAll('.party');
+              for(var j=0; j<elem.length ;++j){
+                if(name == elem[j].getAttribute('data-name')){
+                  elem[j].innerHTML += txt;
+                  break;
+                }
+	      }
+            }
+            if(respon.length-1 == i) plist.push(temp_for_plist);
+          }
+	}
+
+        /* for list */
+        for(var i=0; i<plist.length ;++i){
+          create_pcard(plist[i]);
+	}
+      }
+      xhr.open("GET", "parties.yml");
+      xhr.send("search=alice");
+    }
+
+    function load_logout_list(){
+      var users_info = '';
+      var xhr = new XMLHttpRequest();
+
+      xhr.onload = function(){
+        if(xhr.status === 200){
+          var respon = xhr.responseText.split('\n');
+
+          for(var i=0; i<respon.length ;++i){
+            var info = respon[i].split(' ');
+            var uList = document.querySelectorAll('.card-header.alert.alert-info b');
+            var uLogoutList = document.querySelectorAll('.card-header.alert.alert-info span');
+
+            for(var j=0; j<uList.length ;++j){
+              if(info[1] == uList[j].innerText){
+                //uLogoutList[j].innerText = info[0].split('_')[0] + ' ' + info[0].split('_')[1];
+                uLogoutList[j].innerText = info[0];
+              }
+            }
+          }
+        }
+      };
+      xhr.open("GET", "connection.log", true);
+      xhr.send("search=alice");
+    }
+
+    window.onload = function(){
+      load_ucard_list();
+      load_pcard_list();
+      load_logout_list();
+    }
+    </script>
+  </head>
+  <body>
+    <h1 class="page-header-icon">Party Information</h1>
+    <div id="party_div" class="row"></div>
+    <hr/>
+    <h1 class="page-header-icon">User Information</h1>
+    <div id="user_div" class="row"></div>
+  </body>
+</html>
