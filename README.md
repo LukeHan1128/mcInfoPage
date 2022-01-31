@@ -1,40 +1,38 @@
-# mcInfoPage
-MC Server information page
-
-
+# MC Server information page
 This files need mcmmo plugin.
 
+----------
 
-<h2>backup.sh<h2>
-This file working for backup.
-
-<code>
+## backup.sh
+This file working for backup.<br/>
+<br/>
+``` BASH
 # command
 crontab -e
 
 
 # set crontab
 0 4 * * *	[mc_backup_path]/backup.sh
-</code>
+```
+<br/>
 
+----------
 
-
-
-<h2>for_cron.sh</h2>
-This file working for update iindex.html page data.
-
-<code>
+## for_cron.sh
+This file working for update iindex.html page data.<br/>
+<br/>
+``` BASH
 # command
 sudo crontab -e
 
 
 # set crontab
 * * * * *	[mc_path]/for_cron.sh
-</code>
+```
+<br/>
 
+----------
 
-
-
-<h2>index.html</h2>
-This file need web server(Ex apach or enginx).
-If you want use this file, copy the file and then add in web server page.
+## index.html
+This file need web server(Ex apach or enginx).<br/>
+If you want use this file, copy the file and then add in web server page.<br/>
