@@ -172,6 +172,11 @@
           var plist = [];
           var temp_for_plist = '';
 
+          if(respon.length == 1 && respon == ''){
+            document.querySelector('#party_div').innerHTML = 'No Party';
+            return;
+          }
+
           for(var i=0; i<respon.length ;++i){
             if(' ' != respon[i][0] && 2 < respon[i].length){
               if(0 != i) plist.push(temp_for_plist);
