@@ -18,7 +18,7 @@ do
 	line=$(cat $mc_path/logs/$user_file | grep "$user" | grep -v "<" | tail -n 1)
 	output="Login"
 	
-	if [[ "$line" == "*left the game*" ]]
+	if [[ "$line" == *"left the game*" ]]
 	then
 		output=$(echo $line | awk -F ' ' '{ print $1 " "  $4}')
 	fi
