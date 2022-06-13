@@ -16,11 +16,14 @@ cnt=0
 for user in $(cat $apach_path/$mcmmo_ufile | grep -v '#' | awk -F ':' '{ print $1 }')
 do
 	line=$(cat $mc_path/logs/$user_file | grep "$user" | grep -v "<" | tail -n 1)
-	output="[Login] $user"
+	output="- $user"
 	
-	if [[ "$line" == *"left the game*" ]]
+	if [[ "$line" == *"left the game" ]]
 	then
 		output=$(echo $line | awk -F ' ' '{ print $1 " "  $4}')
+	elif [[ "$line" == *"logged in with entity id"* ]]
+	then
+		output="[Login] $user"
 	fi
 	
 	if [ $cnt = 0 ]
