@@ -15,7 +15,7 @@ cp $mcmmo_path/$mcmmo_pfile $apach_path
 cnt=0
 for user in $(cat $apach_path/$mcmmo_ufile | grep -v '#' | awk -F ':' '{ print $1 }')
 do
-	line=$(cat $mc_path/logs/$user_file | grep "$user" | grep -v "<" | tail -n 1)
+	line=$(cat $mc_path/logs/$user_file | grep "$user" | grep -E "logged in with entity id|left the game" | tail -n 1)
 	output="- $user"
 	
 	if [[ "$line" == *"left the game" ]]
